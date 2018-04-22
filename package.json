@@ -1,0 +1,22 @@
+{
+  "name": "mirror",
+  "version": "0.0.1",
+  "description": "Simple todo application.",
+  "author": "Seb",
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.4.3",
+    "cookie-parser": "^1.4.3",
+    "express": "~4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^5.0.15",
+    "morgan": "~1.1.1",
+    "nodemon": "^1.17.3",
+    "path": "^0.12.7",
+    "q": "^1.4.1",
+    "request": "^2.69.0",
+    "winston": "^1.0.0"
+  }
+}

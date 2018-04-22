@@ -1,0 +1,75 @@
+<!doctype html>
+
+<!-- define angular module -->
+<html ng-app="App">
+	<head>
+		<!-- META and configuration-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+		<!-- page title -->
+		<title>Motivactive</title>
+
+		<!-- load standard CSS -->
+		<!-- <link rel="stylesheet" href="assets/css/cssreset.css"> -->
+		<link rel="stylesheet" href="assets/css/index.css">
+		<link rel="stylesheet" href="assets/css/fonts.css">
+
+		<!-- load bootstrap and fontawesome via CDN -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+	</head>
+
+	<body>
+
+ 		<header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+         <div id="main">
+			<!-- angular templating -->
+			<!-- this is where content will be injected -->
+			<div ng-view></div>
+		</div>
+
+		<!-- load bower components -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> 		<!-- Angular -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"									
+  				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  				crossorigin="anonymous"></script>													 		 <!-- jQuery -->
+  		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script> --> <!-- ngRoute -->
+  		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+
+		<!-- load root file -->
+		<script src="app.js"></script>
+
+		<!-- load services -->
+		<!-- <script src="js/controllers/frontpage.js"></script> -->
+
+		<!-- load models -->
+		<script src="js/models/BaseModel.js"></script>
+		<script src="js/models/ActivityModel.js"></script>
+		<script src="js/models/UserModel.js"></script>
+
+		<!-- load controllers -->
+		<script src="js/controllers/MainController.js"></script>
+		<script src="js/controllers/ContactController.js"></script>
+		<script src="js/controllers/AboutController.js"></script>
+
+		<!-- load directives -->
+		<!-- <script src="js/directives/some-directive-js-code.js"></script> -->
+
+	</body>
+</html>

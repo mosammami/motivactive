@@ -1,0 +1,22 @@
+<h1>Hallo {{name}}</h1>
+<br/>
+This is an example home page.
+<br/>
+See these super cool example activities!
+<br/>
+
+<div class="media"
+	ng-repeat="activity in activities" 
+	ng-click="onActivityClicked($event, $index)">
+
+	<img class="mr-3" src="../assets/img/64x64.svg" alt="Generic placeholder image">
+	<div class="media-body">
+		<h4 class="mt-0">{{activity.title}}</h4>
+		{{activity.description}}
+	</div>
+
+	<div class="bd">
+	Reward: {{activity.reward}}
+	</div>
+
+</div>
