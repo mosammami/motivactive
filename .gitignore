@@ -1,5 +1,5 @@
 logs/*
+!logs/.gitkeep 
 package-lock.json
 npm-debug.log
 node_modules
-private
