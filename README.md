@@ -18,10 +18,8 @@ Follow these steps:
 
 To see how examples are queued from the database and then shown on the website, you have to install MongoDB on your system. https://docs.mongodb.com/manual/administration/install-community/
 
-Follow the instructions and create a new databased named "motivactive". Right now I haven't uploaded a database with dummy entries, so you'd have to create them yourself:
+The correct starting command for the MongoDB service is dependent on your system, but goes roughly like this:
 
-1 table called "activities" in which each activity has at least following attributes: title, description, reward. That is what the dummy website needs at this point.
-
-1 table called "users". At this point the user doesn't need any attributes.
-
-For the future I will create a dummy database with default entries that we can share while working on this project.
+    "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath path/to/db/directory
+    
+where you have to replace the path/to/db/directory with the ABSOLUTE path (C:/.../.../db) to the database directory. Take the db directory that is included in this project.
