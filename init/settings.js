@@ -22,4 +22,7 @@ module.exports = {
 	    password: 	'',  	// not used yet
 		adapter:    'mongoose'
 	},
+
+	// Key that will be used for encrypting user data
+	AESPrivateKey: 'some_private_key',
 }
