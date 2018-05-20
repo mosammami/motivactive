@@ -3,3 +3,5 @@ logs/*
 package-lock.json
 npm-debug.log
 node_modules
+db/diagnostic.data
+db/journal
