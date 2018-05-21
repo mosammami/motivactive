@@ -1,4 +1,4 @@
-var app = angular.module('App', ['ngRoute']);
+var app = angular.module('App', ['ngRoute', 'ngMessages']);
 
 app.config(function($routeProvider) {
 	$routeProvider
@@ -19,6 +19,30 @@ app.config(function($routeProvider) {
 	.when('/contact', {
 		templateUrl : 'pages/contact.html',
 		controller  : 'contactController'
+	})
+
+	// route for the contact page
+	.when('/login', {
+		templateUrl : 'pages/login.html',
+		controller  : 'loginController'
+	})
+
+	// route for the contact page
+	.when('/account', {
+		templateUrl : 'pages/account.html',
+		controller  : 'accountController'
+	})
+
+	// route for the contact page
+	.when('/forgotpassword', {
+		templateUrl : 'pages/forgotpassword.html',
+		controller  : 'forgotpasswordController'
+	})
+
+	// route for the contact page
+	.when('/post', {
+		templateUrl : 'pages/createpost.html',
+		controller  : 'createPostController'
 	})
 
 	// route for anything else that user writes to URI

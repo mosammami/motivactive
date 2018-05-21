@@ -4,6 +4,7 @@ var Q = require('q'),
 	User = require('../db/mongoose/models/UserModel'),
 	Session = require('../db/mongoose/models/SessionModel'),
 	settings = require('../../init/settings'),
+    winston = require('../../init/winston'),
 	Error = require('../misc/Error'),
 
     aes = 'aes256',
@@ -288,7 +289,8 @@ AuthenticationService.prototype.optionalAuthenticate = function (req, res, next)
 /* first needs to authenticate    */
 /**********************************/
 AuthenticationService.prototype.logout = function (req, res) {
-
+    winston.info('/users' + req.url);
+    
 	res.header('X-XSRF-TOKEN', '');
 
 	Session.findByIdAndUpdate(req.session._id, { closed: true }, { new: true },

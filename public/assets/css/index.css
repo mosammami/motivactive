@@ -1,3 +1,16 @@
 body {
 	background-color: #efefef;
 }
+
+.navbar-search input[type="search"] {
+	width: 500px;
+}
+
+.dropdown-menu {
+	min-width: 105px;
+}
+
+.dummy-page {
+	text-align: center;
+	margin-top: 200px;
+}

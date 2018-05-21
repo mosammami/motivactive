@@ -14,17 +14,17 @@ angular.module('App')
 		return baseModel.post('/users/findall');
 	}
 
-	// f.login = function(email, password) {
-	// 	return baseModel.post('/users/login', { email: email, password: password });
-	// };
+	f.login = function(email, password) {
+		return baseModel.post('/users/login', { email: email, password: password });
+	};
 	
-	// f.authenticate = function() {
-	// 	return baseModel.post('/users/authenticate');
-	// };
+	f.authenticate = function() {
+		return baseModel.post('/users/authenticate');
+	};
 
-	// f.logout = function() {
-	// 	return baseModel.post('/users/logout');
-	// };
+	f.logout = function() {
+		return baseModel.post('/users/logout');
+	};
 
 	// f.checkUniqueEmail = function(email) {
 	// 	return baseModel.post('/users/checkUniqueEmail', { email: email });

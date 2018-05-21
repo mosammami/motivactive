@@ -10,35 +10,58 @@
 		<!-- page title -->
 		<title>Motivactive</title>
 
+		<!-- load bootstrap and fontawesome via CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
 		<!-- load standard CSS -->
 		<!-- <link rel="stylesheet" href="assets/css/cssreset.css"> -->
 		<link rel="stylesheet" href="assets/css/index.css">
+		<link rel="stylesheet" href="assets/css/login.css">
+		<link rel="stylesheet" href="assets/css/account.css">
 		<link rel="stylesheet" href="assets/css/fonts.css">
 
-		<!-- load bootstrap and fontawesome via CDN -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 	</head>
 
 	<body>
 
  		<header>
-            <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
-                </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="navigationController">
+	            <div class="container justify-content-between">
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-                </ul>
-            </div>
+	                <a class="navbar-brand" href="#home"><i class="fa fa-square"></i> Motivactive</a>
+
+                    <!-- <a class="navbar-search navbar-brand" href="/">Todo: Implement search bar</a> -->
+					<form class="navbar-search form-inline">
+						<div class="input-group">
+							<input class="form-control" type="search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+							<div class="input-group-append">
+								<span class="input-group-text" id="search-addon">Advanced</span>
+							</div>
+						</div>
+						<button class="btn btn-outline-success ml-2 my-2 my-sm-0" type="submit">Search</button>
+					</form>
+
+	                <ul class="navbar-nav">
+	                    <li class="nav-item"><a class="nav-link" ng-class="navClass('post')" href="#post"><i class="fa fa-plus-square"></i> Post</a></li>
+	                    <li class="nav-item" ng-show="!isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('login')" href="#login"><i class="fa fa-user"></i> Login</a></li>
+	                    <li class="nav-item" ng-show="isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('account')" href="#account"><i class="fa fa-user"></i> Account</a></li>
+	                    <li class="nav-item dropdown">
+	                    	<a class="nav-link" id="languageSelect" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                    		<i class="fa fa-globe"></i> English
+	                    	</a>
+						    <div class="dropdown-menu" aria-labelledby="languageSelect">
+						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(0)">English</a>
+						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(1)">Italian</a>
+						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(2)">German</a>
+						    </div>
+						</li>
+	                </ul>
+	            </div>
             </nav>
         </header>
 
-         <div id="main">
+        <div id="main" class="container">
 			<!-- angular templating -->
 			<!-- this is where content will be injected -->
 			<div ng-view></div>
@@ -46,11 +69,13 @@
 
 		<!-- load bower components -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> 		<!-- Angular -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script> 	 	<!-- ngMessages -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"									
   				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  				crossorigin="anonymous"></script>													 		 <!-- jQuery -->
-  		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script> --> <!-- ngRoute -->
-  		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+  				crossorigin="anonymous"></script>													 		<!-- jQuery -->
+  		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>		<!-- ngRoute -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>								<!-- Popper, required by bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>							  <!-- Bootstrap -->
 
 		<!-- load root file -->
 		<script src="app.js"></script>
@@ -65,6 +90,10 @@
 
 		<!-- load controllers -->
 		<script src="js/controllers/MainController.js"></script>
+		<script src="js/controllers/NavigationController.js"></script>
+		<script src="js/controllers/LoginController.js"></script>
+		<script src="js/controllers/AccountController.js"></script>
+		<script src="js/controllers/CreatePostController.js"></script>
 		<script src="js/controllers/ContactController.js"></script>
 		<script src="js/controllers/AboutController.js"></script>
 
