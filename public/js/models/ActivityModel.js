@@ -6,12 +6,12 @@ angular.module('App')
 
 	var f = {};
 
-	f.create = function(props) {
-		return baseModel.post('/activities/create', { props: props });
+	f.create = function(properties) {
+		return baseModel.post('/activities/create', properties);
 	};
 
-	f.findall = function() {
-		return baseModel.post('/activities/findall');
+	f.find = function(filter) {
+		return baseModel.post('/activities/find', filter);
 	}
 
 	return f;

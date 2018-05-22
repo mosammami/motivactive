@@ -2,6 +2,10 @@ body {
 	background-color: #efefef;
 }
 
+#main {
+	margin-top: 75px;
+}
+
 .navbar-search input[type="search"] {
 	width: 500px;
 }

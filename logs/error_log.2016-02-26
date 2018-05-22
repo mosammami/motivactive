@@ -1,0 +1,1 @@
+{"error":"Error: ENOENT: no such file or directory, stat '/home/sebbo/Projects/mirror/node-todo-master/index.html'\n    at Error (native)","level":"error","message":"FatalError","timestamp":"2016-02-26T18:29:58.506Z"}

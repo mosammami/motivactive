@@ -10,7 +10,7 @@ angular.module('App')
 
 		var deferred = $q.defer();
 		var token = localStorage.token || '';
-
+		
 		$http.post(
 			'http://localhost:3000/api' + url, 
 			{ 
@@ -19,7 +19,7 @@ angular.module('App')
 			{ 
 				headers: { 
 					'X-XSRF-TOKEN': token,
-					'X-Requested-With': 'xmlhttprequest' 
+					'X-Requested-With': 'xmlhttprequest'
 				}, 
 				withCredentials: true 
 			}
