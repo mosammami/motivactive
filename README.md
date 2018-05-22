@@ -29,16 +29,25 @@ where you have to replace the path/to/db/directory with the ABSOLUTE path (C:/..
 ## Database stuff
 
 ### User
+
 A regular user with an id that can be associated with any other database object.
+
 special fields: 
+
 password: sha256 hashed password + salt
+
 password_salt: timestamp of user creation that is used as a password salt, so that one cannot unhash the password to retrieve the real clear text.
 
 ### Session
+
 Once a user logs in, a session is given to him. When the session expires, the user will be logged out automatically.
+
 special fields:
+
 nonce: timestamp of session creation which is incremented each time the session is renewed (when user visits a subsite that requires authentification). If the nonce is too old (e.g. phishing attack), the user will be logged out automatically.
+
 expired: when the user logs out, expired = true
 
 ### Activity
+
 An activity/job that a user can post and apply for.
