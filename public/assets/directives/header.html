@@ -1,49 +1,106 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="navigationController">
+<div ng-controller="navigationController">
+    <nav id="top" class="navbar navbar-expand-lg">
         <div class="container justify-content-between">
-
         	<!-- Logo -->
-            <a class="navbar-brand" href="#home">
+            <a class="navbar-brand text-light noselect" href="#home">
                 <img id="logo" class="mr-2" src="../assets/img/logo.png" alt="Logo">
                  Motivactive
              </a>
 
             <!-- Search -->
-			<form class="navbar-search form-inline">
+			<form class="navbar-search form-inline" ng-submit="search()">
 				<div class="input-group">
-					<input class="form-control" type="search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-					<div class="input-group-append">
-						<span class="input-group-text" id="search-addon">Advanced</span>
+					<input class="form-control" type="search" placeholder="What kind of activity are you looking for?" aria-label="Search" aria-describedby="search-addon" ng-model="searchParams">
+					<div class="input-group-append noselect">
+						<span class="input-group-text" id="search-addon">advanced</span>
 					</div>
 				</div>
-				<button class="btn btn-outline-success ml-2 my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn btn-warning ml-2 my-2 my-sm-0" type="submit">Search</button>
 			</form>
 
 			<!-- Post, Login/Account, Languages -->
             <ul class="navbar-nav">
             	<!-- Post -->
-                <li class="nav-item"><a class="nav-link" ng-class="navClass('post')" href="#post"><i class="fa fa-plus-square"></i> Post</a></li>
+                <li id="post-activity" class="nav-item noselect mr-5">
+                    <a class="nav-link text-light" href="#post">
+                        <i class="fas fa-plus-square text-center"></i>
+                        <div>Post an Activity</div>
+                    </a>
+                </li>
 
                 <!-- Login -->
-                <li class="nav-item" ng-show="!isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('login')" href="#login"><i class="fa fa-user"></i> Login</a></li>
+                <li id="login" class="nav-item noselect" ng-show="!isLoggedIn" ng-cloak>
+                    <a class="nav-link text-light" href="#login">
+                        <i class="fas fa-user mr-1"></i>
+                        <div>Login</div>
+                    </a>
+                </li>
 
                 <!-- Account -->
-                <li class="nav-item" ng-show="isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('account')" href="#account"><i class="fa fa-user"></i> Account</a></li>
+                <li id="account" class="nav-item dropdown noselect" ng-show="isLoggedIn" ng-cloak>
+                    <a id="dropdown" class="nav-link dropdown-toggle text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user mr-1"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown">
+                      <a class="dropdown-item" href="#account">Account</a>
+                      <a class="dropdown-item" href="#account/messages">Messages</a>
+                      <a class="dropdown-item" href="#account/myposts">My Posts</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" ng-click="logout()">Logout</a>
+                    </div>
+                </li>
 
                 <!-- Languages -->
-                <li class="nav-item dropdown">
-                	<!-- Open Dropdown -->
-                	<a class="nav-link" id="languageSelect" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                		<i class="fa fa-globe"></i> English
+                <!-- <li class="nav-item dropdown">
+                	<a class="nav-link text-light" id="languageSelect" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<i class="fas fa-globe mr-1"></i>
+                        English
                 	</a>
-                	<!-- Dropdown Menu -->
+
 				    <div class="dropdown-menu" aria-labelledby="languageSelect">
 				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(0)">English</a>
 				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(1)">Italian</a>
 				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(2)">German</a>
 				    </div>
-				</li>
+				</li> -->
             </ul>
         </div>
     </nav>
-</header>
+
+    <nav id="bottom" class="bg-white pt-3">
+        <ul class="nav mx-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#" ng-mouseenter="enter('home')" ng-mouseleave="leave('home')">Home</a>
+                <div class="bar" ng-class="isActive('home') || hover('home')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=nursing" ng-mouseenter="enter('nursing')" ng-mouseleave="leave('nursing')">Nursing</a>
+                <div class="bar" ng-class="isActive('nursing') || hover('nursing')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=household" ng-mouseenter="enter('household')" ng-mouseleave="leave('household')">Household</a>
+                <div class="bar" ng-class="isActive('household') || hover('household')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=gardening" ng-mouseenter="enter('gardening')" ng-mouseleave="leave('gardening')">Gardening</a>
+                <div class="bar" ng-class="isActive('gardening') || hover('gardening')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=schooling" ng-mouseenter="enter('schooling')" ng-mouseleave="leave('schooling')">Schooling</a>
+                <div class="bar" ng-class="isActive('schooling') || hover('schooling')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=daily" ng-mouseenter="enter('daily')" ng-mouseleave="leave('daily')">Daily Tasks</a>
+                <div class="bar" ng-class="isActive('daily') || hover('daily')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=community" ng-mouseenter="enter('community')" ng-mouseleave="leave('community')">Community</a>
+                <div class="bar" ng-class="isActive('community') || hover('community')"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark pb-3" href="#search?c[]=other" ng-mouseenter="enter('other')" ng-mouseleave="leave('other')">Other</a>
+                <div class="bar" ng-class="isActive('other') || hover('other')"></div>
+            </li>
+        </ul>
+    </nav>
+</div>

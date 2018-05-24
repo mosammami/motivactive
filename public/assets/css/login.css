@@ -1,7 +1,11 @@
+#login-form-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+}
+
 #login-form {
 	width: 450px !important;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -70%);
+	margin: auto;
 }

@@ -45,6 +45,12 @@ app.config(function($routeProvider) {
 		controller  : 'createPostController'
 	})
 
+	// route for the contact page
+	.when('/search', {
+		templateUrl : 'pages/search.html',
+		controller  : 'searchController'
+	})
+
 	// route for anything else that user writes to URI
 	.otherwise({redirectTo: '/'});
 });

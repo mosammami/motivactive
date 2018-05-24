@@ -1,28 +1,30 @@
-<form id="login-form" name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
-    <!-- Form Header -->
-    <h1 class="mb-3 text-center">
-        Login
-    </h1>
+<div id="login-form-parent">
+    <form id="login-form" name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+        <!-- Form Header -->
+        <h1 class="mb-3 text-center">
+            Login
+        </h1>
 
-    <!-- Email -->
-    <div class="form-group">
-        <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="email" required
-            ng-class="{ 'is-invalid': (loginForm.email.$invalid && submitted) || invalidCredentials}">
-        <p class="invalid-feedback" ng-show="loginForm.email.$invalid && submitted">Please enter a valid email.</p>
-    </div>
+        <!-- Email -->
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="email" required
+                ng-class="{ 'is-invalid': (loginForm.email.$invalid && submitted) || invalidCredentials}">
+            <p class="invalid-feedback" ng-show="loginForm.email.$invalid && submitted">Please enter a valid email.</p>
+        </div>
 
-    <!-- Password -->
-    <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Enter password" ng-model="password" required
-             ng-class="{ 'is-invalid': (loginForm.password.$invalid && submitted) || invalidCredentials}">
-        <p class="invalid-feedback" ng-show="loginForm.password.$invalid && submitted">Please enter a valid password.</p>
-        <p class="invalid-feedback" ng-show="invalidCredentials">Your email or password is incorrect.</p>
-        <p class="invalid-feedback" ng-show="somethingWentWrong">Ups, something unexpected happened! Please try to log in again or contact the customer support.</p>
-        <small id="emailHelp" class="form-text text-muted">Trying to remember your password? Remember our password policy: at least 8 characters of which two are numbers and one is a special character! You can't remember? <a href="#forgotpassword">Click here to create a new password.</a></small>
-    </div>
+        <!-- Password -->
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Enter password" ng-model="password" required
+                 ng-class="{ 'is-invalid': (loginForm.password.$invalid && submitted) || invalidCredentials}">
+            <p class="invalid-feedback" ng-show="loginForm.password.$invalid && submitted">Please enter a valid password.</p>
+            <p class="invalid-feedback" ng-show="invalidCredentials">Your email or password is incorrect.</p>
+            <p class="invalid-feedback" ng-show="somethingWentWrong">Ups, something unexpected happened! Please try to log in again or contact the customer support.</p>
+            <small id="emailHelp" class="form-text text-muted">Trying to remember your password? Remember our password policy: at least 8 characters of which two are numbers and one is a special character! You can't remember? <a href="#forgotpassword">Click here to create a new password.</a></small>
+        </div>
 
-    <!-- Submit Button -->
-    <div class="text-center ">
-        <button type="submit" class="btn btn-primary text-center">Login</button>
-    </div>
-</form>
+        <!-- Submit Button -->
+        <div class="text-center ">
+            <button type="submit" class="btn btn-primary text-center">Login</button>
+        </div>
+    </form>
+</div>

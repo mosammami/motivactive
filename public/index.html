@@ -9,13 +9,15 @@
 
 		<!-- page title -->
 		<title>Motivactive</title>
+		
+		<!-- load standard CSS -->
+		<link rel="stylesheet" href="assets/css/cssreset.css">
 
 		<!-- load bootstrap and fontawesome via CDN -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 		<!-- load standard CSS -->
-		<!-- <link rel="stylesheet" href="assets/css/cssreset.css"> -->
 		<link rel="stylesheet" href="assets/css/index.css">
 		<link rel="stylesheet" href="assets/css/header.css">
 		<link rel="stylesheet" href="assets/css/footer.css">
@@ -27,15 +29,17 @@
 
 	<body>
 
- 		<div header-directive></div>
+		<div id="body-container">
+	 		<header-directive></header-directive>
 
-        <div id="main" class="container">
-			<!-- angular templating -->
-			<!-- this is where content will be injected -->
-			<div ng-view></div>
+	        <div id="main" class="bg-light">
+				<!-- angular templating -->
+				<!-- this is where content will be injected -->
+				<div class="container" ng-view></div>
+			</div>
+
+ 			<footer-directive></footer-directive>
 		</div>
-
- 		<footer-directive></footer-directive>
 
 		<!-- load bower components -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> 		<!-- Angular -->
@@ -66,6 +70,7 @@
 		<script src="js/controllers/CreatePostController.js"></script>
 		<script src="js/controllers/ContactController.js"></script>
 		<script src="js/controllers/AboutController.js"></script>
+		<script src="js/controllers/SearchController.js"></script>
 
 		<!-- load directives -->
 		<script src="js/directives/HeaderDirective.js"></script>

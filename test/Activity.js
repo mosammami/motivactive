@@ -247,9 +247,9 @@ describe('Activity', function() {
         it('should find available activities', function(done) {
 
             var body = {
-                data: {
+                data: JSON.stringify({
                     volunteer_id: null
-                }
+                })
             };
 
             request(url)
