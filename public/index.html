@@ -17,6 +17,8 @@
 		<!-- load standard CSS -->
 		<!-- <link rel="stylesheet" href="assets/css/cssreset.css"> -->
 		<link rel="stylesheet" href="assets/css/index.css">
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/footer.css">
 		<link rel="stylesheet" href="assets/css/login.css">
 		<link rel="stylesheet" href="assets/css/account.css">
 		<link rel="stylesheet" href="assets/css/fonts.css">
@@ -25,47 +27,15 @@
 
 	<body>
 
- 		<header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="navigationController">
-	            <div class="container justify-content-between">
-
-	                <a class="navbar-brand" href="#home"><i class="fa fa-square"></i> Motivactive</a>
-
-                    <!-- <a class="navbar-search navbar-brand" href="/">Todo: Implement search bar</a> -->
-					<form class="navbar-search form-inline">
-						<div class="input-group">
-							<input class="form-control" type="search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-							<div class="input-group-append">
-								<span class="input-group-text" id="search-addon">Advanced</span>
-							</div>
-						</div>
-						<button class="btn btn-outline-success ml-2 my-2 my-sm-0" type="submit">Search</button>
-					</form>
-
-	                <ul class="navbar-nav">
-	                    <li class="nav-item"><a class="nav-link" ng-class="navClass('post')" href="#post"><i class="fa fa-plus-square"></i> Post</a></li>
-	                    <li class="nav-item" ng-show="!isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('login')" href="#login"><i class="fa fa-user"></i> Login</a></li>
-	                    <li class="nav-item" ng-show="isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('account')" href="#account"><i class="fa fa-user"></i> Account</a></li>
-	                    <li class="nav-item dropdown">
-	                    	<a class="nav-link" id="languageSelect" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                    		<i class="fa fa-globe"></i> English
-	                    	</a>
-						    <div class="dropdown-menu" aria-labelledby="languageSelect">
-						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(0)">English</a>
-						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(1)">Italian</a>
-						      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(2)">German</a>
-						    </div>
-						</li>
-	                </ul>
-	            </div>
-            </nav>
-        </header>
+ 		<div header-directive></div>
 
         <div id="main" class="container">
 			<!-- angular templating -->
 			<!-- this is where content will be injected -->
 			<div ng-view></div>
 		</div>
+
+ 		<footer-directive></footer-directive>
 
 		<!-- load bower components -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> 		<!-- Angular -->
@@ -98,7 +68,8 @@
 		<script src="js/controllers/AboutController.js"></script>
 
 		<!-- load directives -->
-		<!-- <script src="js/directives/some-directive-js-code.js"></script> -->
+		<script src="js/directives/HeaderDirective.js"></script>
+		<script src="js/directives/FooterDirective.js"></script>
 
 	</body>
 </html>

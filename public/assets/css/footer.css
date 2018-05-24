@@ -1,0 +1,15 @@
+footer-directive {	
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 200px;
+}
+
+footer-directive form {
+		width: 387px !important;
+}
+
+footer-directive form input[type=email] {
+		width: 250px !important;
+		display: inline-block;
+}

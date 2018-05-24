@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="navigationController">
+        <div class="container justify-content-between">
+
+        	<!-- Logo -->
+            <a class="navbar-brand" href="#home">
+                <img id="logo" class="mr-2" src="../assets/img/logo.png" alt="Logo">
+                 Motivactive
+             </a>
+
+            <!-- Search -->
+			<form class="navbar-search form-inline">
+				<div class="input-group">
+					<input class="form-control" type="search" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+					<div class="input-group-append">
+						<span class="input-group-text" id="search-addon">Advanced</span>
+					</div>
+				</div>
+				<button class="btn btn-outline-success ml-2 my-2 my-sm-0" type="submit">Search</button>
+			</form>
+
+			<!-- Post, Login/Account, Languages -->
+            <ul class="navbar-nav">
+            	<!-- Post -->
+                <li class="nav-item"><a class="nav-link" ng-class="navClass('post')" href="#post"><i class="fa fa-plus-square"></i> Post</a></li>
+
+                <!-- Login -->
+                <li class="nav-item" ng-show="!isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('login')" href="#login"><i class="fa fa-user"></i> Login</a></li>
+
+                <!-- Account -->
+                <li class="nav-item" ng-show="isLoggedIn" ng-cloak><a class="nav-link" ng-class="navClass('account')" href="#account"><i class="fa fa-user"></i> Account</a></li>
+
+                <!-- Languages -->
+                <li class="nav-item dropdown">
+                	<!-- Open Dropdown -->
+                	<a class="nav-link" id="languageSelect" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<i class="fa fa-globe"></i> English
+                	</a>
+                	<!-- Dropdown Menu -->
+				    <div class="dropdown-menu" aria-labelledby="languageSelect">
+				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(0)">English</a>
+				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(1)">Italian</a>
+				      <a class="dropdown-item" href="#" ng-click="onLanguageSelect(2)">German</a>
+				    </div>
+				</li>
+            </ul>
+        </div>
+    </nav>
+</header>

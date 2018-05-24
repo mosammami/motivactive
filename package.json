@@ -13,7 +13,7 @@
     "cookie-parser": "^1.4.3",
     "crypto": "^1.0.1",
     "csprng": "^0.1.2",
-    "express": "~4.13.4",
+    "express": "^4.13.4",
     "express-session": "^1.13.0",
     "mongoose": "^5.0.15",
     "morgan": "~1.1.1",

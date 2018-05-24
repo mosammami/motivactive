@@ -1,17 +1,15 @@
+html {
+	height: 100%;
+}
+
 body {
+	min-height:  100%;
 	background-color: #efefef;
 }
 
 #main {
 	margin-top: 75px;
-}
-
-.navbar-search input[type="search"] {
-	width: 500px;
-}
-
-.dropdown-menu {
-	min-width: 105px;
+	padding-bottom: 200px;   /* Height of the footer */
 }
 
 .dummy-page {

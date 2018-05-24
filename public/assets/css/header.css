@@ -1,0 +1,16 @@
+#logo {
+	width: 64px;
+	height: 64px;
+}
+
+.navbar-search input[type="search"] {
+	width: 500px;
+}
+
+.nav-item .nav-link {
+	cursor: pointer;
+}
+
+.nav-item .dropdown-menu {
+	min-width: 105px;
+}
