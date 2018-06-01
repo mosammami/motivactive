@@ -12,7 +12,8 @@ const ActivitySchema = mongoose.Schema({
 	due_to: 	  { type: Date },
 	repeated: 	  { type: Boolean },
 	user_id: 	  { type: ObjectId },
-	volunteer_id: { type: ObjectId }
+	volunteer_id: { type: ObjectId },
+	categories:   [{ type: String }]
 });
 
 ActivitySchema.pre('save', function (next) {

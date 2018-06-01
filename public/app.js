@@ -51,6 +51,18 @@ app.config(function($routeProvider) {
 		controller  : 'searchController'
 	})
 
+	// route for the contact page
+	.when('/activity', {
+		templateUrl : 'pages/activity.html',
+		controller  : 'activityController'
+	})
+
+	// route for the contact page
+	.when('/user', {
+		templateUrl : 'pages/profile.html',
+		controller  : 'profileController'
+	})
+
 	// route for anything else that user writes to URI
 	.otherwise({redirectTo: '/'});
 });

@@ -25,9 +25,9 @@ header-directive #top .navbar-nav .nav-item {
 	padding: 2px 0;
 }
 
-header-directive #top .navbar-nav .nav-item a {
+/*header-directive #top .navbar-nav .nav-item a {
 	padding: 0;
-}
+}*/
 
 header-directive #top .navbar-nav a,
 header-directive #top .navbar-nav a:hover,
@@ -46,7 +46,7 @@ header-directive #post-activity i {
 	font-size: 24pt !important;
 }
 
-header-directive #top .navbar-nav .nav-item div {
+header-directive #top .navbar-nav .nav-item .description {
 	display: inline-block;
 	height: 34px;
 	line-height: 34px;

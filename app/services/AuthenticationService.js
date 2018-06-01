@@ -143,10 +143,6 @@ AuthenticationService.prototype.authenticate = function (req, res, next) {
 		        			next(new Error('InvalidRequest', 'Session expired.'));
 		        		}
 
-			            else if (session.expiry - new Date().getTime() < 0) {
-							next(new Error('InvalidRequest', 'Session expired.'));
-						}
-
 			            else if (session.closed) {
 							next(new Error('InvalidRequest', 'Session is closed.'));
 						}
@@ -233,10 +229,6 @@ AuthenticationService.prototype.optionalAuthenticate = function (req, res, next)
 		        		if (session == null)  {
 		        			next(new Error('InvalidRequest', 'Session expired.'));
 		        		}
-
-			            else if (session.expiry - new Date().getTime() < 0) {
-							next(new Error('InvalidRequest', 'Session expired.'));
-						}
 
 			            else if (session.closed) {
 							next(new Error('InvalidRequest', 'Session is closed.'));

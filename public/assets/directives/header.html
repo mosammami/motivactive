@@ -1,17 +1,17 @@
-<div ng-controller="navigationController">
+<div ng-controller="navigationController" class="noselect">
     <nav id="top" class="navbar navbar-expand-lg">
         <div class="container justify-content-between">
         	<!-- Logo -->
-            <a class="navbar-brand text-light noselect" href="#home">
+            <a class="navbar-brand text-light" href="#home">
                 <img id="logo" class="mr-2" src="../assets/img/logo.png" alt="Logo">
                  Motivactive
              </a>
 
             <!-- Search -->
-			<form class="navbar-search form-inline" ng-submit="search()">
+			<form name="searchForm" class="navbar-search form-inline" ng-submit="search()">
 				<div class="input-group">
-					<input class="form-control" type="search" placeholder="What kind of activity are you looking for?" aria-label="Search" aria-describedby="search-addon" ng-model="searchParams">
-					<div class="input-group-append noselect">
+					<input class="form-control" name="queue" type="search" placeholder="What kind of activity are you looking for?" aria-label="Search" aria-describedby="search-addon" ng-model="searchQueue">
+					<div class="input-group-append">
 						<span class="input-group-text" id="search-addon">advanced</span>
 					</div>
 				</div>
@@ -21,24 +21,24 @@
 			<!-- Post, Login/Account, Languages -->
             <ul class="navbar-nav">
             	<!-- Post -->
-                <li id="post-activity" class="nav-item noselect mr-5">
-                    <a class="nav-link text-light" href="#post">
+                <li id="post-activity" class="nav-item mr-5">
+                    <a class="nav-link text-light px-0 py-0" href="#post">
                         <i class="fas fa-plus-square text-center"></i>
-                        <div>Post an Activity</div>
+                        <div class="description">Post an Activity</div>
                     </a>
                 </li>
 
                 <!-- Login -->
-                <li id="login" class="nav-item noselect" ng-show="!isLoggedIn" ng-cloak>
-                    <a class="nav-link text-light" href="#login">
+                <li id="login" class="nav-item" ng-show="!isLoggedIn" ng-cloak>
+                    <a class="nav-link text-light px-0 py-0" href="#login">
                         <i class="fas fa-user mr-1"></i>
-                        <div>Login</div>
+                        <div class="description">Login</div>
                     </a>
                 </li>
 
                 <!-- Account -->
-                <li id="account" class="nav-item dropdown noselect" ng-show="isLoggedIn" ng-cloak>
-                    <a id="dropdown" class="nav-link dropdown-toggle text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li id="account" class="nav-item dropdown" ng-show="isLoggedIn" ng-cloak>
+                    <a id="dropdown" class="nav-link dropdown-toggle text-light px-0 py-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user mr-1"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown">

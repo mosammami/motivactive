@@ -1,5 +1,30 @@
-.media {margin:10px;}
-.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
-.media .img {float:left; margin-right: 10px;}
-.media .img img{display:block;}
-.media .imgExt{float:right; margin-left: 10px;}
+.activity-holder {
+	width: 800px;
+	display: flex;
+	flex-direction: horizontal;
+}
+
+.activity-item {
+	width: 150px;
+	height: 250px;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.activity-item:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+
+.activity-thumb {
+	width: 100%;
+}
+
+.activity-title {
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.activity-reward {
+	font-size: 10pt;
+}

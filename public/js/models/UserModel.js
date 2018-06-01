@@ -10,6 +10,10 @@ angular.module('App')
 		return baseModel.post('/users/create', { props: props });
 	};
 
+	f.findById = function(id) {
+		return baseModel.post('/users/findById', { id: id });
+	};
+
 	f.findall = function() {
 		return baseModel.post('/users/findall');
 	}

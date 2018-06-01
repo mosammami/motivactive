@@ -24,6 +24,8 @@ The correct starting command for the MongoDB service is dependent on your system
     
 where you have to replace the path/to/db/directory with the ABSOLUTE path (C:/.../.../db) to the database directory. Take the db directory that is included in this project.
 
+It may happen that you will not see and activites on the homepage, when using the db form this git. This is because the homepage only shows the most recent activites and the activities on the database are simply "too old". In this case, delete all activities in the database (with the MongoDB Compass Community Software) and run `npm run populate` which will populate the DB with new activities with current time stamps.
+
 # A teeny tiny bit of documentation
 
 ## Database stuff

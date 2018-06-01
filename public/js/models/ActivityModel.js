@@ -14,6 +14,10 @@ angular.module('App')
 		return baseModel.post('/activities/find', filter);
 	}
 
+	f.findById = function(id) {
+		return baseModel.post('/activities/findById', { id: id });
+	}
+
 	return f;
 
 }]);

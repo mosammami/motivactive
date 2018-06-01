@@ -18,6 +18,17 @@ router.post('/findall', function (req, res, next) {
     });
 });
 
+router.post('/findById', authService.optionalAuthenticate, function (req, res, next) {
+    winston.info('/users' + req.url);
+
+    User.findById(req.body.data.id, function (err, instance) {
+        if (err) next(err);
+        else {
+            res.json(instance);
+        }
+    });
+});
+
 router.post('/create', function (req, res, next) {
     winston.info('/users' + req.url);
 

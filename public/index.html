@@ -18,21 +18,24 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 		<!-- load standard CSS -->
+		<link rel="stylesheet" href="assets/css/fonts.css">
 		<link rel="stylesheet" href="assets/css/index.css">
 		<link rel="stylesheet" href="assets/css/header.css">
 		<link rel="stylesheet" href="assets/css/footer.css">
+		<link rel="stylesheet" href="assets/css/home.css">
 		<link rel="stylesheet" href="assets/css/login.css">
 		<link rel="stylesheet" href="assets/css/account.css">
-		<link rel="stylesheet" href="assets/css/fonts.css">
+		<link rel="stylesheet" href="assets/css/activity.css">
+		<link rel="stylesheet" href="assets/css/profile.css">
 
 	</head>
 
-	<body>
+	<body class="bg-light">
 
 		<div id="body-container">
 	 		<header-directive></header-directive>
 
-	        <div id="main" class="bg-light">
+	        <div id="main">
 				<!-- angular templating -->
 				<!-- this is where content will be injected -->
 				<div class="container" ng-view></div>
@@ -71,6 +74,8 @@
 		<script src="js/controllers/ContactController.js"></script>
 		<script src="js/controllers/AboutController.js"></script>
 		<script src="js/controllers/SearchController.js"></script>
+		<script src="js/controllers/ActivityController.js"></script>
+		<script src="js/controllers/ProfileController.js"></script>
 
 		<!-- load directives -->
 		<script src="js/directives/HeaderDirective.js"></script>

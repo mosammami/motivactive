@@ -5,8 +5,6 @@ angular.module('App')
 	$scope.isLoggedIn = false;
 	if (localStorage.getItem('user') != null)
 		$scope.isLoggedIn = true;
-	
-	$scope.searchParams = "";
 
 	var links = {
 		'home': false,
@@ -38,7 +36,8 @@ angular.module('App')
 
        	// if on the home page, delete search params
        	if (activeRoutes.includes('home')) {
-			$scope.searchParams = "";
+       		$scope.searchQueue = "";
+       		console.log('lol');
        	}
 
        	// return "active" for all links that are active
@@ -77,6 +76,6 @@ angular.module('App')
 	};
 
 	$scope.search = function() {
-		$window.location.href = '#search?q=' + encodeURIComponent($scope.searchParams);
+		$window.location.href = '#search?q=' + encodeURIComponent($scope.searchQueue);
 	}
 });

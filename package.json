@@ -5,7 +5,8 @@
   "author": "Seb",
   "scripts": {
     "start": "node ./bin/server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "populate": "mocha populate"
   },
   "dependencies": {
     "assert": "^1.4.1",
