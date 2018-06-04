@@ -27,7 +27,8 @@
 		<link rel="stylesheet" href="assets/css/account.css">
 		<link rel="stylesheet" href="assets/css/activity.css">
 		<link rel="stylesheet" href="assets/css/profile.css">
-
+		<link rel="stylesheet" href="assets/css/star-rating-svg.css">
+		<link rel="stylesheet" href="assets/css/wizard.css">
 	</head>
 
 	<body class="bg-light">
@@ -53,7 +54,7 @@
   		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>		<!-- ngRoute -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>								<!-- Popper, required by bootstrap -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>							  <!-- Bootstrap -->
-
+		
 		<!-- load root file -->
 		<script src="app.js"></script>
 
@@ -80,6 +81,63 @@
 		<!-- load directives -->
 		<script src="js/directives/HeaderDirective.js"></script>
 		<script src="js/directives/FooterDirective.js"></script>
+		<script src="assets/js/jquery.star-rating-svg.js"></script>
+		<script>
+$(function() {
+  // basic use comes with defaults values
+$(".my-rating-4").starRating({
+  totalStars: 5,
+  starShape: 'rounded',
+  starSize: 20,
+  emptyColor: 'lightgray',
+  hoverColor: 'salmon',
+  activeColor: 'crimson',
+  useGradient: false
+});
+});
 
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+        allWells = $('.setup-content'),
+        allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+	m = 0;
+    navListItems.click(function (e) {
+        e.preventDefault();
+		
+        var $target = $($(this).attr('href')),
+            $item = $(this);
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-success').addClass('btn-default');
+            $item.addClass('btn-success');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function () {
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for (var i = 0; i < curInputs.length; i++) {
+            if (!curInputs[i].validity.valid) {
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-success').trigger('click');
+});
+</script>
 	</body>
 </html>
