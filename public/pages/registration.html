@@ -1,0 +1,95 @@
+
+<div class="container">
+    <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                <p><small>Account Info</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p><small>Basic Info</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p><small>Complete</small></p>
+            </div>
+          
+        </div>
+    </div>
+    
+    <form role="form">
+        <div class="panel panel-primary setup-content" id="step-1">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Account Info</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">First Name</label>
+                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Surname</label>
+                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input maxlength="100" type="password" required="required" class="form-control" placeholder="Enter password" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Confirm Password</label>
+                    <input maxlength="100" type="password" required="required" class="form-control" placeholder="Enter password" />
+                </div>
+                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+        
+        <div class="panel panel-primary setup-content" id="step-2">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Basic Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Religion</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter religion" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Skill</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Skill" />
+                </div>
+				 <div class="form-group">
+                    <label class="control-label">Qualification</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Qualification" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Qualification</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Qualification" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Tel</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Tel" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Email" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Picture</label>
+                    <input maxlength="200" type="file" required="required" class="form-control" />
+                </div>
+                <button class="btn btn-success nextBtn pull-right" type="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="panel panel-primary setup-content" id="step-3">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Complete</h3>
+            </div>
+            <div class="panel-body">
+                <p> Congratulation, you have registered successfully. </p>
+            </div>
+        </div>
+        
+      
+    </form>
+</div>
