@@ -62,7 +62,14 @@ app.config(function($routeProvider) {
 		templateUrl : 'pages/profile.html',
 		controller  : 'profileController'
 	})
-
+   .when('/reg', {
+       templateUrl : 'pages/registration.html',
+      controller  : 'aboutController'
+  })
+   .when('/dealer', {
+		templateUrl : 'pages/dealer.html',
+		controller  : 'profileController'
+	})
 	// route for anything else that user writes to URI
 	.otherwise({redirectTo: '/'});
 });
