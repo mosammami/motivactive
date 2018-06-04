@@ -1,4 +1,110 @@
-<div class="dummy-page">
-	<h1>Careful!</h1>
-	<h5>This is a dummy page. It hasn't been implemented yet.</h5>
+
+<div class="container">
+    <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                <p><small>Category</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p><small>Fill in the blank</small></p>
+            </div>
+            <div class="stepwizard-step col-xs-3"> 
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p><small>Complete</small></p>
+            </div>
+          
+        </div>
+    </div>
+    
+    <form role="form">
+        <div class="panel panel-primary setup-content" id="step-1">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Category </h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                 
+				<select class="form-control">
+				  <option value="Nursing">Nursing</option>
+				  <option value="Household">Household</option>
+				  <option value="Schooling">Schooling</option>
+				  <option value="Gardening">Gardening</option>
+				  <option value="DailyTask">DailyTask</option>
+				  <option value="Community">Community</option>
+				  <option value="Other">Other</option>
+
+				</select>
+				 </div>
+                
+				
+                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+        
+        <div class="panel panel-primary setup-content" id="step-2">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Fill in the blank</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Title</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter title" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">region</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter region" />
+                </div>
+				   <div class="form-group">
+                    <label class="control-label">Description</label>
+                     <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+				 <div class="form-group">
+                    <label class="control-label">Time</label>
+                      <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Time" />
+                </div>
+					 <div class="form-group">
+                    <label class="control-label">Reward</label>
+                      <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Reward" />
+                </div>
+				 <div class="form-group">
+                    <label class="control-label">Qualification</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Qualification" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">urgency</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter urgency" />
+                </div>
+				<div class="form-group">
+                    
+                   Hide contact details <input maxlength="200" type="checkbox"  />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Tel</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Tel" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Email" />
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Picture</label>
+                    <input maxlength="200" type="file" required="required" class="form-control" />
+                </div>
+                <button class="btn btn-success nextBtn pull-right" type="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="panel panel-primary setup-content" id="step-3">
+            <div class="panel-heading">
+                 <h3 class="panel-title">Complete</h3>
+            </div>
+            <div class="panel-body">
+                <p> Congratulation, you have registered successfully. </p>
+            </div>
+        </div>
+        
+      
+    </form>
 </div>
